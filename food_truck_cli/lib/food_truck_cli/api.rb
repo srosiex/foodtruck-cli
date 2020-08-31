@@ -10,7 +10,8 @@ app_token = "xMKoH9K02HOZDWZl5wX2OLmMA"
 puts app_token
 # secrettoken = InLyqywiC4m9UniT2qPFV-b4qNqL3-p1Pkza
 
-truck_info = RestClient.get("https://data.sfgov.org/resource/jjew-r69b.json?$$app_token="+app_token)
+response = RestClient.get("https://data.sfgov.org/resource/jjew-r69b.json?$$app_token="+app_token)
+truck_array = JSON.parse(response.body)
 binding.pry
 
 puts "goodbye"
