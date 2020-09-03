@@ -6,8 +6,9 @@ class CLI
 
         puts "Welcome to the SanFran Food Truck CLI"
         puts "Loading data..."
+        offset = '0'
+        API.new.get_food_trucks(offset)
 
-        API.new.get_food_trucks
         puts "Data loaded.."
         main_display
     end
@@ -17,11 +18,15 @@ class CLI
             puts "No trucks are open right now."
         else
         puts "Food Trucks open near you"
+        list_trucks
+        end
+        get_more_trucks
+    end
+
+    def list_trucks
         Truck.all.each.with_index(1) do |truck, i|
             puts "#{i}. #{truck.applicant} - #{truck.location}"
         end
-        end
-        get_more_trucks
     end
 
     def get_more_trucks
@@ -32,13 +37,25 @@ class CLI
     def more_trucks_input
         user_input = gets.strip
 
-        if user_input == "Y" || "y"
+        if user_input == "Y"
             puts "do somethibng"
-        elsif user_input == "N" || "n"
+            truck_next_limit
+        elsif user_input == "N"
             goodbye
         else
             invalid_choice
             get_more_trucks
+        end
+    end
+
+    def truck_next_limit
+       listed_trucks_count = list_trucks.length 
+       offset = listed_trucks_count * 2
+        if listed_trucks_count <= 10 
+            puts "more trucks here"
+            get_food_trucks(offset)
+        else
+            puts "nope"
         end
     end
 
