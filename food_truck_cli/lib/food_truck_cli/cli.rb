@@ -49,11 +49,13 @@ class CLI
     end
 
     def truck_next_limit
+
        listed_trucks_count = list_trucks.length 
-       offset = listed_trucks_count * 2
-        if listed_trucks_count <= 10 
-            puts "more trucks here"
-            get_food_trucks(offset)
+       offset = listed_trucks_count + 10 
+       
+        if listed_trucks_count >= 10 
+            API.new.get_food_trucks(offset.to_s)
+            
         else
             puts "nope"
         end
