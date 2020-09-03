@@ -1,5 +1,6 @@
 
 class API
+    # Retrieve food truck data from API.
     def get_food_trucks(offset)
         app_token = "xMKoH9K02HOZDWZl5wX2OLmMA"
         limit = '10'
@@ -12,24 +13,6 @@ class API
             Truck.new(truck)
         end
     end
-
-    # def get_all_trucks(offset)
-    #     app_token = "xMKoH9K02HOZDWZl5wX2OLmMA"
-    #     limit = '10'
-    #     offset = '0'
-    #     current_time = Time.now.strftime("%-k:%M")
-
-    #     if page
-    #         response = RestClient.get(page)
-    #     else
-    #         response = RestClient.get("https://data.sfgov.org/resource/jjew-r69b.json?$$app_token="+app_token+"&$limit="+limit+"&$offset="+offset+"&$order=applicant") 
-    #     end
-
-    #     truck_array = JSON.parse(response.body)
-    #     truck_array.each do |truck|
-    #         Truck.new(truck)
-    #     end 
-    # end
     end
 
 
