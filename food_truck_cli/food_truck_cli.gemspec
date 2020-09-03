@@ -8,11 +8,11 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sarah Henderson"]
   spec.email         = ["sarahrose.henderson@gmail.com"]
 
-  spec.summary       = %q"CLI to find food trucks open in the San Fran area."
-  spec.homepage      = "https://github.com/srosiex/foodtruck-cli"
+  spec.summary       = "CLI to find food trucks open in the San Fran area."
+  spec.homepage      = "https://rubygems.org/gems/food_truck_cli"
   spec.license       = "MIT"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  spec.metadata["allowed_push_host"] = 'http://mygemserver.com'
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/srosiex/foodtruck-cli"
@@ -24,7 +24,8 @@ Gem::Specification.new do |spec|
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
   spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  # spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables = ['food_truck_cli/bin/run']
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 2.0"
