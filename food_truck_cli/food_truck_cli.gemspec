@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sarah Henderson"]
   spec.email         = ["sarahrose.henderson@gmail.com"]
 
-  spec.summary       = %q"CLI for Redfin"
+  spec.summary       = %q"CLI to find food trucks open in the San Fran area."
   spec.homepage      = "https://github.com/srosiex/foodtruck-cli"
   spec.license       = "MIT"
 

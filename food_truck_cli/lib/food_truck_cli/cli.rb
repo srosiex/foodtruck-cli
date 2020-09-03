@@ -52,12 +52,13 @@ class CLI
 
        listed_trucks_count = list_trucks.length 
        offset = listed_trucks_count + 10 
-       
+
         if listed_trucks_count >= 10 
             API.new.get_food_trucks(offset.to_s)
-            
-        else
-            puts "nope"
+            list_trucks
+            get_more_trucks
+        else 
+            goodbye
         end
     end
 
