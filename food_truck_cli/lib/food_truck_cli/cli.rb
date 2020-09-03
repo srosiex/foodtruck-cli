@@ -1,4 +1,4 @@
-
+# class that handles CLI use and user input to display data.
 class CLI
 
     def start
