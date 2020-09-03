@@ -10,13 +10,15 @@ require_relative './truck'
 
 # secrettoken = InLyqywiC4m9UniT2qPFV-b4qNqL3-p1Pkza
 
+# starttime="+current_time
+
 class API
     def get_food_trucks
         app_token = "xMKoH9K02HOZDWZl5wX2OLmMA"
         limit = '10'
         current_time = Time.now.strftime("%-k:%M")
 
-        response = RestClient.get("https://data.sfgov.org/resource/jjew-r69b.json?$$app_token="+app_token+"&$limit="+limit+"&starttime="+current_time)
+        response = RestClient.get("https://data.sfgov.org/resource/jjew-r69b.json?$$app_token="+app_token+"&$limit="+limit+"&$order=applicant")
         truck_array = JSON.parse(response.body)
         truck_array.each do |truck|
             Truck.new(truck)
