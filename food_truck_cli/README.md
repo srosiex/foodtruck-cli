@@ -3,19 +3,10 @@ Simple command line application that prints out food trucks based on time and da
 API: https://dev.socrata.com/foundry/data.sfgov.org/jjew-r69b
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'food_truck_cli'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install food_truck_cli
+Clone this repository.
+Cd into food_truck_cli
+Run 'bundle install' in terminal
+In command line run 'ruby bin/run'
 
 ## Usage
 Upon running the program you will see the first ten food truck results.
